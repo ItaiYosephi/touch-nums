@@ -1,0 +1,45 @@
+
+.header {
+    background-color: orange;
+    width: fit-content;
+}
+
+body {
+    margin: auto;
+    width: 50%;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+}
+  
+
+  .clock-container{
+      background-color:yellow;
+      width: 200px;
+      min-height: 10px;
+      border-radius: 10px;
+  }
+
+  .clock {
+      width: 40%;
+      margin: 0 auto;
+      font-size: 60px;
+      font-style: bold;
+  }
+
+  .tbl-nums td {
+    font-size: 60px;
+    text-align: center;
+    width:20px;  
+    height:20px;  
+    cursor: pointer;
+    
+  }
+
+  td:hover {
+      background-color: beige;
+  }
+
+  .clicked {
+      background-color: blue;
+  }
