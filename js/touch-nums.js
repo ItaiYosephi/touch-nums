@@ -1,22 +1,25 @@
 'use strict'
 
 var LENGTH = 4;
-var SIZE = LENGTH ** 2;
+var SIZE;
 var gNums = [];
 // var gMat = [];
 var gNextNum = 1;
 var gStartTime = 0;
 var gGameOn = false;
+var gInterval;
 
 
 
 
 function init() {
+    SIZE = LENGTH ** 2;
+    gNextNum = 1;
+
     gNums = initRandomNums(SIZE);
     // gMat = initMatrix(gNums);
     printMat();
-    
-    setInterval(updateClock,50);
+
 }
 
 function updateClock() {
@@ -29,11 +32,13 @@ function updateClock() {
 function cellClicked(elClickedNum) {
     var num = +elClickedNum.innerText;
     // num = +num;  // string to number
-    if (num === gNextNum){
+    if (num === gNextNum) {
         elClickedNum.classList.add('clicked');
         gNextNum++;
-        if (num === 1){
+        if (num === 1) {
             gStartTime = Date.now();
+            gInterval = setInterval(updateClock, 50);
+
             gGameOn = true;
         }
         if (num === SIZE) {
@@ -68,7 +73,7 @@ function printMat() {
         strHTML += '</tr>'
     }
     // console.log(strHTML);
-    
+
 
     elTblNums.innerHTML = strHTML;
 }
@@ -78,3 +83,12 @@ function drawNum() {
     return gNums.pop();
 }
 
+function changeDiff(el, length) {
+    console.log('change diff');
+    LENGTH = length;
+    clearInterval(gInterval)
+    gGameOn = false
+    document.querySelector('button[disabled]').disabled = false
+    el.disabled = true;
+    init();
+}
