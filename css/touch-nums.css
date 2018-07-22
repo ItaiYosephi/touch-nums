@@ -1,45 +1,60 @@
-
-.header {
-    background-color: orange;
-    width: fit-content;
+html {
+    min-height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     margin: auto;
-    width: 50%;
     align-self: center;
     align-content: center;
     align-items: center;
 }
-  
 
-  .clock-container{
-      background-color:yellow;
-      width: 200px;
-      min-height: 10px;
-      border-radius: 10px;
-  }
-
-  .clock {
-      width: 40%;
-      margin: 0 auto;
-      font-size: 60px;
-      font-style: bold;
-  }
-
-  .tbl-nums td {
-    font-size: 60px;
+header {
+    width: 100%;
+    margin-bottom: 10px;
     text-align: center;
-    width:20px;  
-    height:20px;  
+    color: #409eff;
+    border-bottom: 1px solid #409eff;
+    background-color: #ddd;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.clock-container {
+    min-width: 225px;
+    margin: 10px 0;
+    min-height: 10px;
+    border-radius: 10px;
+    background-color: #409eff;
+}
+
+.clock {
+    padding: 0 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.tbl-nums td {
+    border: 1px solid purple;
+    font-size: 45px;
+    font-weight: 300;
+    text-align: center;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
-    
-  }
+}
 
-  td:hover {
-      background-color: beige;
-  }
+.tbl-nums td:hover {
+    background-color: #ddd;
+}
 
-  .clicked {
-      background-color: blue;
-  }
+.tbl-nums td.clicked {
+    background-color: #409eff;
+}
